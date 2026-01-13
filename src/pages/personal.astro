@@ -1,14 +1,11 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
+const pageTitle = "Personal Page"
 ---
-<body>
+<BaseLayout pageTitle={pageTitle}>
   <h1>This is my Third Page</h1>
 
-  <Header />
   <p>I am creating this as a test to see how it works. </p>
 
-  <Footer />
-  <script> import "../scripts/menu.js"; </script>
-</body>
+  </BaseLayout>
