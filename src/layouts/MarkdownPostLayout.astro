@@ -1,9 +1,65 @@
 ---
 const { frontmatter } = Astro.props;
 ---
-<style>
 
-<meta charset="utf-8" />
-<h1>{frontmatter.title}</h1>
-<p>Written by {frontmatter.author}</p>
-<slot />
+<style>
+  .prose {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    line-height: 1.65;
+    font-size: 1.05rem;
+  }
+
+  .prose h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .prose .meta {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .prose p {
+    margin: 1.25rem 0;
+  }
+
+  .prose pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    font-size: 0.9rem;
+
+  }
+
+  .prose code {
+    font-size: 0.95em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  }
+  .prose pre code {
+  display: block;
+  }
+  .prose :not(pre) > code {
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+</style>
+ <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{Astro.props.title}</title>
+  </head>
+  <body>
+  <header>
+    <a href="/blog">← Back to blog</a>
+      </header>
+<article class="prose">
+  <h1>{frontmatter.title}</h1>
+  <p class="meta">Written by {frontmatter.author}</p>
+  <slot />
+</article>
+  </body>
+

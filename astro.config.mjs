@@ -1,5 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+export default defineConfig({
+  markdown: {
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      theme: 'github-dark',
+    },
+  },
+});
 // https://astro.build/config
-export default defineConfig({});
+//export default defineConfig({});
