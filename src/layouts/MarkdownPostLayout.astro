@@ -1,4 +1,5 @@
 ---
+import BaseLayout from './BaseLayout.astro'
 const { frontmatter } = Astro.props;
 ---
 
@@ -47,19 +48,14 @@ const { frontmatter } = Astro.props;
   font-size: 0.9em;
 }
 </style>
- <head>
-    <meta charset="utf-8" />
+  <BaseLayout pageTitle={frontmatter.title}>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{Astro.props.title}</title>
-  </head>
-  <body>
   <header>
     <a href="/blog">← Back to blog</a>
       </header>
 <article class="prose">
-  <h1>{frontmatter.title}</h1>
   <p class="meta">Written by {frontmatter.author}</p>
   <slot />
 </article>
-  </body>
-
+  </BaseLayout>
