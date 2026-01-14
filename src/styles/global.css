@@ -73,3 +73,26 @@ h1 {
     display: none;
   }
 }
+html.dark {
+  background-color: #4B4E53;
+  background-image: linear-gradient(147deg, #4B4E53 0%, #000000 74%);
+  color: #fff;
+}
+
+.dark .menu {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: #0d0950;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+.dark a {
+  color: #ff9776;
+}
