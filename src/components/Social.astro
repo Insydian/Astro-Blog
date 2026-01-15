@@ -4,9 +4,31 @@ const { platform, username } = Astro.props;
 <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 <style>
 	a {
-		padding: 0.5rem 1rem;
-		color:white;
-		background-color:#4c1d95;
-		text-decoration: none;
-	}
+		  display: inline-block;              /* important for padding/shape */
+		  padding: 0.5rem 1rem;
+  		  color: white;
+  		  background-color: #4c1d95;
+  		  text-decoration: none;
+  		  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+
+  		  border-radius: 0.5rem;              /* curved edges */
+  		  font-weight: 500;
+
+  		  transition: 
+  		    background-color 0.2s ease,
+  		    transform 0.1s ease,
+  		    box-shadow 0.1s ease;
+  		        }
+  		  a:hover,
+  		  a:focus {
+  		    background-color: #5b21b6;
+  		    transform: translateY(-1px);
+  		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+		}
+		  a:active {
+		  transform: translateY(0);
+		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+		}
 </style>

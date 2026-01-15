@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+const pageTitle = "Personal Page"
+---
+<BaseLayout pageTitle={pageTitle}>
+
+  <embed class="Resume"   type="application/pdf"
+                          src="/Caleb_Resume.pdf" />
+
+  </BaseLayout>
+<style>
+  .Resume {
+    width: 100%;
+  height: 90vh;          /* fills most of the viewport */
+  border: none;
+  max-width: 900px;
+  height: 90vh;
+  margin: 2rem auto;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+
+  }

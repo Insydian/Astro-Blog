@@ -1,11 +1,70 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
+const pageTitle = "Notes";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <div class="hero">
+    <div class="copy">
+      <h2 class="Title">Caleb's Notes</h2>
+      <div class="main-text">
+        <p>Welcome to my thoughts and attempts at writing.</p>
 
+        <p>This is a space for technical learnings, projects, and unfinished thoughts.</p>
+
+        <p>Please refer to the menu for help getting around.</p>
+      </div>
+
+
+    </div>
+
+    <figure>
+    <img class="headshot" src="/DSCF0688.JPG" alt="Me" />
+    </figure>
+  </div>
+</BaseLayout>
 
 </BaseLayout>
+<style>
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.headshot {
+  width: clamp(200px, 30vw, 300px);
+  height: auto;
+  padding: 6px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.main-text {
+  max-width: 60ch;          /* readable line length */
+  margin: 0 auto;           /* center the block */
+  padding: 0 0.25rem;       /* tiny breathing room on narrow screens */
+  font-size: clamp(1rem, 0.9rem + 0.6vw, 1.125rem); /* scales gently */
+  line-height: 1.65;
+}
+
+.main-text p {
+  margin: 0 0 1rem 0;       /* consistent paragraph spacing */
+}
+
+@media (max-width: 480px) {
+  .main-text p {
+    margin-bottom: 0.85rem; /* slightly tighter on phones */
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .headshot {
+    width: min(100%, 300px);
+  }
+}
+</style>
