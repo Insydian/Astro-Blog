@@ -16,6 +16,11 @@ const pageTitle = "Blog";
 
   <h2>Coffee House Journal</h2>
   <p>My explorations and thoughts while I drink coffee</p>
+  {publishedPosts.length === 0 && (
+  <p class="muted">
+    No posts yet. Writing is ongoing...check back later.
+  </p>
+)}
 
   <ul>
         {publishedPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
