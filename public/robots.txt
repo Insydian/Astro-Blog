@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /DSCF0688.jpg
